@@ -5,6 +5,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{717AC7AE-851E-435A-BDF7-D6C7BFA7519B}|Internship-3-OOP.csproj|c:\\users\\miaba\\desktop\\dumpinternship\\internship-3-oop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{717AC7AE-851E-435A-BDF7-D6C7BFA7519B}|Internship-3-OOP.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{717AC7AE-851E-435A-BDF7-D6C7BFA7519B}|Internship-3-OOP.csproj|c:\\users\\miaba\\desktop\\dumpinternship\\internship-3-oop\\classes\\writer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{717AC7AE-851E-435A-BDF7-D6C7BFA7519B}|Internship-3-OOP.csproj|solutionrelative:classes\\writer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{717AC7AE-851E-435A-BDF7-D6C7BFA7519B}|Internship-3-OOP.csproj|c:\\users\\miaba\\desktop\\dumpinternship\\internship-3-oop\\classes\\inputvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{717AC7AE-851E-435A-BDF7-D6C7BFA7519B}|Internship-3-OOP.csproj|solutionrelative:classes\\inputvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,17 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "InputValidation.cs",
+              "DocumentMoniker": "C:\\Users\\miaba\\Desktop\\DUMPInternship\\Internship-3-OOP\\Classes\\InputValidation.cs",
+              "RelativeDocumentMoniker": "Classes\\InputValidation.cs",
+              "ToolTip": "C:\\Users\\miaba\\Desktop\\DUMPInternship\\Internship-3-OOP\\Classes\\InputValidation.cs",
+              "RelativeToolTip": "Classes\\InputValidation.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T23:31:58.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Writer.cs",
+              "DocumentMoniker": "C:\\Users\\miaba\\Desktop\\DUMPInternship\\Internship-3-OOP\\Classes\\Writer.cs",
+              "RelativeDocumentMoniker": "Classes\\Writer.cs",
+              "ToolTip": "C:\\Users\\miaba\\Desktop\\DUMPInternship\\Internship-3-OOP\\Classes\\Writer.cs",
+              "RelativeToolTip": "Classes\\Writer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAYwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T23:26:24.822Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\miaba\\Desktop\\DUMPInternship\\Internship-3-OOP\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\miaba\\Desktop\\DUMPInternship\\Internship-3-OOP\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\miaba\\Desktop\\DUMPInternship\\Internship-3-OOP\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-17T22:17:15.187Z",
               "EditorCaption": ""
