@@ -8,5 +8,6 @@ namespace Internship_3_OOP.Classes
 {
     internal class Flight
     {
+
     }
 }

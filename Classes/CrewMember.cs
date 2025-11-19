@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Internship_3_OOP.Classes
 {
-    internal class CrewMember
+    public class CrewMember
     {
-        string name { get; }
-        string surname { get; }
+        public string name { get; set; }
+        public string surname { get; }
         DateTime dateOfBirth { get; }
         Gender gender { get; }
         CrewPosition position { get; }
@@ -24,9 +24,9 @@ namespace Internship_3_OOP.Classes
             this.position = position;
         }
 
-        public void print()
+        public override string ToString()
         {
-            Console.WriteLine("{0} - {1} - {2} - {3} - {4}", name, surname, position, gender, dateOfBirth);
+            return $"{name} - {surname} - {position} - {gender} - {dateOfBirth:dd.MM.yyyy}";
         }
     }
 }
