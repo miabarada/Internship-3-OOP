@@ -91,5 +91,17 @@ namespace Internship_3_OOP.Helpers
                     )
             };
         }
+
+        public static List<Plane> CreatePlaneList()
+        {
+            return new List<Plane>
+            {
+                new Plane(Guid.NewGuid(), "Boeing 747", 2000, new List<Category>{Category.STANDARD, Category.BUSINESS}, 200, 112),
+                new Plane(Guid.NewGuid(), "Airbus A380", 2005, new List<Category>{ Category.STANDARD, Category.BUSINESS, Category.VIP}, 300, 150),
+                new Plane(Guid.NewGuid(), "Boeing 737 MAX", 2017, new List<Category>{ Category.STANDARD}, 180, 90),
+                new Plane(Guid.NewGuid(), "Embraer E195", 2013, new List<Category>{ Category.STANDARD, Category.BUSINESS}, 120, 60),
+                new Plane(Guid.NewGuid(), "Airbus A320neo", 2016, new List<Category>{ Category.STANDARD}, 160, 80)
+            };
+        }
     }
 }

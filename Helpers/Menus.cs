@@ -16,9 +16,9 @@ namespace Internship_3_OOP.Helpers
             {
                 Print.FlightCrewMenu();
 
-                var input = InputValidation.validInteger(0, 4);
-                if (input == 4)
-                    break;
+                var input = InputValidation.ValidInteger(0, 3);
+                if (input == 0)
+                    return;
 
                 if (input == 1)
                     foreach (var flightCrew in flightCrews)
@@ -26,97 +26,109 @@ namespace Internship_3_OOP.Helpers
 
                 if (input == 2)
                 {
-                    Console.Write("Unesi ime posade: ");
-                    var name = Console.ReadLine();
+                    FlightCrew newFlightCrew = new FlightCrew(pilots, copilots, stuards);
+                    flightCrews.Add(newFlightCrew);
+                    Console.WriteLine("Nova posada uspješno dodana!");
                     Console.WriteLine();
-
-                    Console.WriteLine("Odaberite nekog od ponuđenih pilota: ");
-                    Print.printList(pilots);
-                    Console.Write("Odabir: ");
-                    var nameAndSurname = InputValidation.nameAndSurnameInList(pilots);
-                    var selectedPilot = pilots.Where(p => p.name.ToUpper().Equals(nameAndSurname[0].ToUpper()) && p.surname.ToUpper().Equals(nameAndSurname[1].ToUpper())).FirstOrDefault();
-                    pilots.Remove(selectedPilot);
-                    Console.WriteLine();
-
-                    Console.WriteLine("Odaberite nekog od ponuđenih kopilota: ");
-                    Print.printList(copilots);
-                    Console.Write("Odabir: ");
-                    nameAndSurname = InputValidation.nameAndSurnameInList(copilots);
-                    var selectedCopilot = copilots.Where(p => p.name.ToUpper().Equals(nameAndSurname[0].ToUpper()) && p.surname.ToUpper().Equals(nameAndSurname[1].ToUpper())).FirstOrDefault();
-                    copilots.Remove(selectedCopilot);
-                    Console.WriteLine();
-
-                    Console.WriteLine("Odaberite nekog od ponuđenih stjuarda/stjuardesa: ");
-                    Print.printList(stuards);
-                    Console.Write("Odabir: ");
-                    nameAndSurname = InputValidation.nameAndSurnameInList(stuards);
-                    var selectedStuard = stuards.Where(p => p.name.ToUpper().Equals(nameAndSurname[0].ToUpper()) && p.surname.ToUpper().Equals(nameAndSurname[1].ToUpper())).FirstOrDefault();
-                    stuards.Remove(selectedStuard);
-                    Console.WriteLine();
-
-                    Console.WriteLine("Odaberite drugog stjuarda/stjuardesu: ");
-                    Print.printList(stuards);
-                    Console.Write("Odabir: ");
-                    nameAndSurname = InputValidation.nameAndSurnameInList(stuards);
-                    var selectedStuard2 = stuards.Where(p => p.name.ToUpper().Equals(nameAndSurname[0].ToUpper()) && p.surname.ToUpper().Equals(nameAndSurname[1].ToUpper())).FirstOrDefault();
-                    stuards.Remove(selectedStuard2);
-                    Console.WriteLine();
-
-                    flightCrews.Add(new FlightCrew(name, selectedPilot, selectedCopilot, selectedStuard, selectedStuard2));
                 }
 
                 if(input == 3)
                 {
-                    Console.WriteLine("Unesite podatke o novoj osobi");
-                    Console.Write("Ime: ");
-                    var name = InputValidation.validNameInput();
-
-                    Console.Write("Prezime: ");
-                    var surname = InputValidation.validNameInput();
-                                        
-                    Console.Write("Datum rođenja: ");
-                    var dateOfBirth = InputValidation.validDateInput();
+                    CrewMember newCrewMember = new CrewMember(pilots, copilots, stuards);
+                    Console.WriteLine("Nova osoba uspješno dodana!");
                     Console.WriteLine();
-
-                    Console.WriteLine("Odaberi spol");
-                    Print.Gender();
-                    Console.Write("Odabir: ");
-                    var inputGender = InputValidation.validInteger(1, 2);
-                    Console.WriteLine();
-
-                    Gender gender = Gender.MALE;
-                    if (inputGender == 2)
-                        gender = Gender.FEMALE;
-
-                    Console.WriteLine("Odaberi poziciju");
-                    Print.Positions();
-                    Console.Write("Odabir: ");
-                    var inputPosition = InputValidation.validInteger(1, 4);
-                    Console.WriteLine();
-
-                    CrewPosition position;
-                    if (inputPosition == 1)
-                    {
-                        position = CrewPosition.PILOT;
-                        pilots.Add(new CrewMember(name, surname, dateOfBirth, gender, position));
-                    }                        
-                    if (inputPosition == 2)
-                    {
-                        position = CrewPosition.KOPILOT;
-                        copilots.Add(new CrewMember(name, surname, dateOfBirth, gender, position));
-                    }
-                    if (inputPosition == 3)
-                    {
-                        position = CrewPosition.STJUARD;
-                        stuards.Add(new CrewMember(name, surname, dateOfBirth, gender, position));
-                    }
-                    if (inputPosition == 4)
-                    {
-                        position = CrewPosition.STJUARDESA;
-                        stuards.Add(new CrewMember(name, surname, dateOfBirth, gender, position));
-                    }
                 }
             }
+        }
+
+        public static void PlaneMenu(List<Plane> planes)
+        {
+            while(true)
+            {
+                Print.PlaneMenu();
+
+                int input = InputValidation.ValidInteger(0, 4);
+                if (input == 0)
+                    return;
+
+                if(input == 1)
+                {
+                    Console.WriteLine("Svi avioni:");
+                    foreach(var plane in planes)
+                        Console.WriteLine(plane);
+                } 
+
+                if(input == 2)
+                {
+                    Plane newPlane = new Plane(planes);
+                    Console.WriteLine("Novi avion uspješno dodan!");
+                    Console.WriteLine();
+                }
+
+                if(input == 3)
+                {
+                    Print.SearchMenu();
+                    var searchInput = InputValidation.ValidInteger(1, 2);
+
+                    if (searchInput == 1)
+                    {
+                        Console.WriteLine("Upiši id aviona:");
+                        foreach (var plane in planes)
+                            Console.WriteLine(plane);
+                        Console.Write("Odabir: ");
+
+                        Console.WriteLine();
+                        Guid id = InputValidation.idInList(planes);
+                        Console.Write("Traženi avion:");
+                        Console.WriteLine(planes.Where(plane => plane.id == id).First());
+                    }
+
+                    if(searchInput == 2)
+                    {
+                        Console.WriteLine("Upiši id aviona:");
+                        foreach (var plane in planes)
+                            Console.WriteLine(plane);
+                        Console.Write("Odabir: ");
+
+                        Console.WriteLine();
+                        string name = InputValidation.NameInList(planes);
+                        Console.WriteLine("Traženi avion:");
+                        Console.WriteLine(planes.Where(plane => plane.name == name).First());
+                    }
+                }
+
+                if (input == 4)
+                {
+                    Print.SearchMenu();
+                    var deleteInput = InputValidation.ValidInteger(1, 2);
+
+                    if (deleteInput == 1)
+                    {
+                        Console.WriteLine("Upiši id aviona:");
+                        foreach (var plane in planes)
+                            Console.WriteLine(plane);
+                        Console.Write("Odabir: ");
+
+                        Console.WriteLine();
+                        Guid id = InputValidation.idInList(planes);
+                        planes.RemoveAll(plane => plane.id == id);
+                    }
+
+                    if (deleteInput == 2)
+                    {
+                        Console.WriteLine("Upiši id aviona:");
+                        foreach (var plane in planes)
+                            Console.WriteLine(plane);
+                        Console.Write("Odabir: ");
+
+                        Console.WriteLine();
+                        string name = InputValidation.NameInList(planes);
+                        Console.Write("Traženi avion:");
+                        planes.RemoveAll(plane => plane.name == name);
+                    }
+                }
+            }         
+            
         }
     }
 }

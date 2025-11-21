@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Internship_3_OOP.Classes
+namespace Internship_3_OOP.Enums
 {
-    internal class Flight
+    public enum Category
     {
+        STANDARD, BUSINESS, VIP
     }
 }

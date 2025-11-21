@@ -14,20 +14,21 @@ namespace Internship_3_OOP
 
             var flightCrews = Data.CreateFlightCrewList();
 
-            Print.MainMenu();
-            int mainInput = InputValidation.validInteger(0, 4);
+            var planes = Data.CreatePlaneList();
 
-            while(mainInput != 0)
+            while(true)
             {
-                if(mainInput == 1)
-                {
-                    Print.TravelerMenu();
-                }
+                Print.MainMenu();
+                int mainInput = InputValidation.ValidInteger(0, 4);
+
+                if (mainInput == 0)
+                    return;
 
                 if (mainInput == 4)
                     Menus.FlightCrewMenu(flightCrews, pilots, copilots, stjuards);
 
-                mainInput = InputValidation.validInteger(0, 4);
+                if (mainInput == 3)
+                    Menus.PlaneMenu(planes);
             }
         }
     }

@@ -9,7 +9,7 @@ namespace Internship_3_OOP.Helpers
 {
     public class InputValidation
     {
-        public static int validInteger()
+        public static int ValidInteger()
         {
             int input;
             while (true)
@@ -23,7 +23,7 @@ namespace Internship_3_OOP.Helpers
             return input;
         }
 
-        public static int validInteger(int bottom, int top)
+        public static int ValidInteger(int bottom, int top)
         {
             int input;
             while (true)
@@ -37,7 +37,7 @@ namespace Internship_3_OOP.Helpers
             return input;
         }
 
-        public static string validNameInput()
+        public static string ValidPersonNameInput()
         {
             string name;
 
@@ -54,13 +54,13 @@ namespace Internship_3_OOP.Helpers
         }
 
 
-        public static string[] nameAndSurnameInList(List<CrewMember> list)
+        public static string[] NameAndSurnameInList(List<CrewMember> list)
         {
             string[] nameAndSurname;
 
             while (true)
             {
-                nameAndSurname = validNameAndSurnameInput();
+                nameAndSurname = ValidNameAndSurnameInput();
 
                 var nameAndSurnameInList = list.Where(person =>
                     person.name.ToUpper().Equals(nameAndSurname[0].ToUpper()) &&
@@ -76,7 +76,26 @@ namespace Internship_3_OOP.Helpers
             return nameAndSurname;
         }
 
-        public static string[] validNameAndSurnameInput()
+            public static string NameInList(List<Plane> planes)
+            {
+            string name;
+
+            while (true)
+            {
+                name = Console.ReadLine();
+
+                var nameInList = planes.Where(plane => plane.name.Equals(name)).ToList();
+
+                if (nameInList.Count != 0)
+                    break;
+
+                Console.Write("Unesi postojeće ime: ");
+            }
+
+            return name;
+        }
+
+        public static string[] ValidNameAndSurnameInput()
         {
             string[] nameAndSurname;
 
@@ -94,7 +113,7 @@ namespace Internship_3_OOP.Helpers
             return nameAndSurname;
         }
 
-        public static DateTime validDateInput()
+        public static DateTime ValidDateInput()
         {
             DateTime dateInput;
             while (true)
@@ -109,5 +128,35 @@ namespace Internship_3_OOP.Helpers
             return dateInput;
         }
 
+        public static Guid ValidId()
+        {
+            Guid result;
+
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (Guid.TryParse(input, out result))
+                    return result;
+
+                Console.Write("Unesi valjani GUID: ");
+            }
+        }
+
+
+        public static Guid idInList(List<Plane> planes)
+        {
+            Guid newId;
+            while (true)
+            {
+                newId = ValidId();
+                var idInList = planes.Where(plane => plane.id == newId).ToList();
+                if (idInList.Count != 0)
+                    break;
+
+                Console.Write("Unesi postojeći id: ");
+            }
+            return newId;
+        }
     }
 }
