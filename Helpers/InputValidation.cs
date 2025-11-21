@@ -23,6 +23,20 @@ namespace Internship_3_OOP.Helpers
             return input;
         }
 
+        public static double ValidDouble()
+        {
+            double input;
+            while (true)
+            {
+                double.TryParse(Console.ReadLine(), out input);
+                if (input > 0)
+                    break;
+
+                Console.Write("Unesi broj veći od 0: ");
+            }
+            return input;
+        }
+
         public static int ValidInteger(int bottom, int top)
         {
             int input;
@@ -76,8 +90,8 @@ namespace Internship_3_OOP.Helpers
             return nameAndSurname;
         }
 
-            public static string NameInList(List<Plane> planes)
-            {
+        public static string NameInList(List<Plane> planes)
+        {
             string name;
 
             while (true)
@@ -85,6 +99,44 @@ namespace Internship_3_OOP.Helpers
                 name = Console.ReadLine();
 
                 var nameInList = planes.Where(plane => plane.name.Equals(name)).ToList();
+
+                if (nameInList.Count != 0)
+                    break;
+
+                Console.Write("Unesi postojeće ime: ");
+            }
+
+            return name;
+        }
+
+        public static string NameInList(List<FlightCrew> flightCrews)
+        {
+            string name;
+
+            while (true)
+            {
+                name = Console.ReadLine();
+
+                var nameInList = flightCrews.Where(crew => crew.name.Equals(name)).ToList();
+
+                if (nameInList.Count != 0)
+                    break;
+
+                Console.Write("Unesi postojeće ime: ");
+            }
+
+            return name;
+        }
+
+        public static string NameInList(List<Flight> flights)
+        {
+            string name;
+
+            while (true)
+            {
+                name = Console.ReadLine();
+
+                var nameInList = flights.Where(flight => flight.name.Equals(name)).ToList();
 
                 if (nameInList.Count != 0)
                     break;
@@ -128,6 +180,21 @@ namespace Internship_3_OOP.Helpers
             return dateInput;
         }
 
+        public static DateTime ValidTravelDateInput()
+        {
+            DateTime dateInput;
+            while (true)
+            {
+                string input = Console.ReadLine();
+
+                if (DateTime.TryParse(input, out dateInput))
+                    break;
+
+                Console.Write("Neispravan unos, unesi datum u formatu YYYY-MM-DD HH:MM:SS: ", DateTime.Now.ToShortDateString());
+            }
+            return dateInput;
+        }
+
         public static Guid ValidId()
         {
             Guid result;
@@ -151,6 +218,21 @@ namespace Internship_3_OOP.Helpers
             {
                 newId = ValidId();
                 var idInList = planes.Where(plane => plane.id == newId).ToList();
+                if (idInList.Count != 0)
+                    break;
+
+                Console.Write("Unesi postojeći id: ");
+            }
+            return newId;
+        }
+
+        public static Guid idInList(List<Flight> flights)
+        {
+            Guid newId;
+            while (true)
+            {
+                newId = ValidId();
+                var idInList = flights.Where(flight => flight.id == newId).ToList();
                 if (idInList.Count != 0)
                     break;
 

@@ -82,6 +82,19 @@ namespace Internship_3_OOP.Helpers
             Console.Write("Odabir: ");
         }
 
+        public static void FlightMenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine("1 - Prikaz svih letova");
+            Console.WriteLine("2 - Dodavanje novog leta");
+            Console.WriteLine("3 - Pretraživanje letova");
+            Console.WriteLine("4 - Uređivanje leta");
+            Console.WriteLine("5 - Brisanje leta");
+            Console.WriteLine("0 - Povratak na prethodni izbornik");
+            Console.WriteLine();
+            Console.Write("Odabir: ");
+        }
+
         public static void SearchMenu()
         {
             Console.WriteLine("Pretraži po:");

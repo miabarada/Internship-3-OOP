@@ -103,5 +103,64 @@ namespace Internship_3_OOP.Helpers
                 new Plane(Guid.NewGuid(), "Airbus A320neo", 2016, new List<Category>{ Category.STANDARD}, 160, 80)
             };
         }
+
+        public static List<Flight> CreateFlightList(List<Plane> planes, List<FlightCrew> flightCrews)
+        {
+            return new List<Flight>
+            {
+                new Flight(Guid.NewGuid(),
+                            "Zagreb-Budimpesta",
+                            new DateTime(2024, 11, 13, 20, 30, 50),
+                            new DateTime(2024, 11, 13, 21, 30, 23),
+                            123.4,
+                            planes[1],
+                            flightCrews[3], 
+                            74
+                            ),
+                new Flight(
+                            Guid.NewGuid(),
+                            "Zagreb-Paris",
+                            new DateTime(2024, 11, 14, 9, 00, 00),
+                            new DateTime(2024, 11, 14, 11, 10, 00),
+                            1080.0,
+                            planes[0],
+                            flightCrews[1], 
+                            150
+                            ),
+
+                new Flight(
+                            Guid.NewGuid(),
+                            "Split-London",
+                            new DateTime(2024, 12, 2, 6, 30, 00),
+                            new DateTime(2024, 12, 2, 9, 15, 00),
+                            1550.0,
+                            planes[2],
+                            flightCrews[2], 
+                            200
+                            ),
+
+                new Flight(
+                            Guid.NewGuid(),
+                            "Rijeka-Amsterdam",
+                            new DateTime(2024, 9, 19, 14, 10, 00),
+                            new DateTime(2024, 9, 19, 16, 55, 00),
+                            1460.3,
+                            planes[3],
+                            flightCrews[0], 
+                            12
+                            ),
+
+                new Flight(
+                            Guid.NewGuid(),
+                            "Dubrovnik-Frankfurt",
+                            new DateTime(2025, 11, 21, 18, 40, 00),
+                            new DateTime(2025, 11, 21, 20, 10, 00),
+                            1180.2,
+                            planes[4],
+                            flightCrews[4], 
+                            45
+                            )
+            };
+        }
     }
 }

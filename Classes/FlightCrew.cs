@@ -9,7 +9,7 @@ namespace Internship_3_OOP.Classes
 {
     public class FlightCrew
     {
-        string name { get; }
+        public string name { get; }
         CrewMember pilot { get; }
         CrewMember copilot { get; }
         CrewMember stuard1 { get; }

@@ -15,7 +15,7 @@ namespace Internship_3_OOP.Classes
         public string name { get; }
         int productionYear { get; }
         List<Category> categories { get; }
-        int numberOfSeats { get; }
+        public int numberOfSeats { get; }
         int numberOfFlights { get; }
 
         public Plane(Guid id, string name, int productionYear, List<Category> categories, int numberOfSeats, int numberOfFlights)
