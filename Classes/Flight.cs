@@ -17,7 +17,7 @@ namespace Internship_3_OOP.Classes
         public DateTime arrivalDate { get; set; }
         double distance { get; }
         TimeSpan durationOfTravel { get; }
-        Plane plane { get; }
+        public Plane plane { get; }
         public FlightCrew flightCrew { get; set; }
         int numberOfPassengers { get; }
         public double occupancy { get; }
@@ -52,7 +52,7 @@ namespace Internship_3_OOP.Classes
             Console.Write("Unesite vrijeme dolaska: ");
             arrivalDate = InputValidation.ValidTravelDateInput();
             durationOfTravel = arrivalDate - departureDate;
-            Console.WriteLine($"Vrijeme trajanja leta je: {durationOfTravel.Hours}h {durationOfTravel.Minutes}min");
+            Console.WriteLine($"Vrijeme trajanja leta je: {durationOfTravel.TotalDays}d {durationOfTravel.Hours}h {durationOfTravel.Minutes}min");
 
             Console.Write("Unesite udaljenost putovanja: ");
             distance = InputValidation.ValidDouble();
@@ -63,7 +63,7 @@ namespace Internship_3_OOP.Classes
                 Console.WriteLine(plane);
             Console.Write("Odabir: ");
             string planeName = InputValidation.NameInList(planes);
-            plane = planes.Where(plane => plane.Equals(planeName)).First();
+            plane = planes.Where(plane => plane.name.Equals(planeName)).First();
 
             Console.WriteLine();
             Console.WriteLine("Unesi naziv neke od postojećih posada:");

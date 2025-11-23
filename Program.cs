@@ -18,6 +18,8 @@ namespace Internship_3_OOP
 
             var flights = Data.CreateFlightList(planes, flightCrews);
 
+            var passengers = Data.CreatePassengerList(planes, flightCrews);
+
             while(true)
             {
                 Print.MainMenu();
@@ -34,6 +36,9 @@ namespace Internship_3_OOP
 
                 if (mainInput == 2)
                     Menus.FlightMenu(flights, planes, flightCrews);
+
+                if (mainInput == 1)
+                    Menus.PassengerMenu(passengers, flights, planes, flightCrews);
             }
         }
     }

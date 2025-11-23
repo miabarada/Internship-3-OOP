@@ -10,7 +10,7 @@ namespace Internship_3_OOP.Helpers
     {
         public static void MainMenu()
         {
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine("1 - Putnici");
             Console.WriteLine("2 - Letovi");
             Console.WriteLine("3 - Avioni");
@@ -20,10 +20,26 @@ namespace Internship_3_OOP.Helpers
             Console.Write("Odabir: ");
         }
 
-        public static void TravelerMenu()
+        public static void PassengerMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("1 - Registracija");
             Console.WriteLine("2 - Prijava");
+            Console.WriteLine("0 - Povratak na prethodni izbornik");
+            Console.WriteLine();
+            Console.Write("Odabir: ");
+        }
+
+        public static void PassengerSubmenu()
+        {
+            Console.WriteLine();
+            Console.WriteLine("1 - Prikaz svih letova");
+            Console.WriteLine("2 - Odabir leta");
+            Console.WriteLine("3 - Pretraživanje letova");
+            Console.WriteLine("4 - Otkazivanje leta");
+            Console.WriteLine("0 - Povratak na prethodni izbornik");
+            Console.WriteLine();
+            Console.Write("Odabir: ");
         }
 
         public static void RegisteredTravelerMenu()

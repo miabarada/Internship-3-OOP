@@ -14,7 +14,7 @@ namespace Internship_3_OOP.Classes
         public Guid id;
         public string name { get; }
         int productionYear { get; }
-        List<Category> categories { get; }
+        public List<Category> categories { get; }
         public int numberOfSeats { get; }
         int numberOfFlights { get; }
 

@@ -240,5 +240,21 @@ namespace Internship_3_OOP.Helpers
             }
             return newId;
         }
+
+        public static string ValidEmailInput()
+        {
+            string email;
+
+            while (true)
+            {
+                email = Console.ReadLine();
+
+                if (email.Contains('@') && !email.Contains(' '))
+                    break;
+
+                Console.Write("Email mora sadrzavati @ i ne smije imati razmake: ");
+            }
+            return email;
+        }
     }
 }
